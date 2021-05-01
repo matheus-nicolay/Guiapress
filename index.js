@@ -17,7 +17,7 @@ app.use(express.static('public'));
 connection
     .authenticate()
     .then(() =>{
-        console.log("Conexão feita com sucesso!")
+        console.log("Conexão feita com sucesso!");
     }).catch((error) => {
         console.log(error);
     })
@@ -30,7 +30,8 @@ app.get("/", (req, res) => {
     Article.findAll({
         order: [
             ['id', 'DESC']
-        ]
+        ],
+        limit: 4
     }).then(articles => {
         Category.findAll().then(categories =>{
             res.render("index", {articles: articles, categories: categories});

@@ -24,7 +24,7 @@
                     <th><%= article.slug %></th>
                     <td><%= article.category.title %></td>
                     <th>
-                        <form method="GET" action="/admin/articles/edit/<%= article.slug %>" style="display: inline;">
+                        <form method="GET" action="/admin/articles/edit/<%= article.id %>" style="display: inline;">
                             <button type="submit" class="btn btn-warning">Editar</button>
                         </form>  
                         <form method="POST" action="/articles/delete" style="display: inline;" onsubmit="confirmDelete(event, this)">
